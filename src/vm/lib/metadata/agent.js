@@ -46,17 +46,17 @@
  *
  * # CREATING SOCKETS
  *
- * If the VM is a KVM VM, the qemu process running in the KVM zone will be
- * running with a "ttyb" virtual serial port for the KVM guest. From the host
- * we can connect to connect to /root/tmp/vm.ttyb in the zoneroot which Qemu is
- * listening on for connections. We connect to this as a client but run a
- * metadata server on the resulting connection. Inside the KVM guest the
+ * If the VM is a KVM or bhyve VM, the qemu or bhyve process running in the zone
+ * will be running with a "ttyb" virtual serial port for the KVM guest. From the
+ * host we can connect to connect to /root/tmp/vm.ttyb in the zoneroot on which
+ * Qemu or bhyve is listening for connections. We connect to this as a client
+ * but run a metadata server on the resulting connection. Inside the guest the
  * mdata-client tools connect to the serial device and are then talking to our
  * metadata handler.
  *
- * For all non-KVM VMs we create a unix domain socket in
- * /var/zonecontrol/<zonename> named metadata.sock. We mount the zonecontrol
- * directory into the zone (read-only) via the brand.
+ * For all OS VMs we create a unix domain socket in /var/zonecontrol/<zonename>
+ * named metadata.sock. We mount the zonecontrol directory into the zone
+ * (read-only) via the brand.
  *
  * In non-LX zones, the zonecontrol is mounted such that the socket is at:
  *
