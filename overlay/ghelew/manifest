@@ -1,2 +1,4 @@
 d usr/bin/ 0755 root bin
 f usr/bin/launch-tmux 0755 root bin
+d usr/gnu/share/terminfo/r 0755 root bin
+f usr/gnu/share/terminfo/r/rxvt-unicode/256color 0644 root bin
