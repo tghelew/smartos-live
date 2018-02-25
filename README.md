@@ -3,7 +3,7 @@
 ## Quickstart
 
 ```
-git clone https://github.com/joyent/smartos-live.git
+git clone https://github.com/tghelew/smartos-live.git
 cd smartos-live
 cp sample.configure.smartos configure.smartos
 ./configure
@@ -181,7 +181,7 @@ guide](https://github.com/joyent/joyent-gerrit/blob/master/docs/user/README.md).
 This repo does not use GitHub pull requests.
 
 All changes should have an associated issue. You can use the [GitHub issue
-tracker](https://github.com/joyent/smartos-live/issues). (Joyent employees use
+tracker](https://github.com/tghelew/smartos-live/issues). (Joyent employees use
 an internal JIRA exposed at <https://smartos.org/bugview>.)
 
 Contributions should be `make check` clean.
