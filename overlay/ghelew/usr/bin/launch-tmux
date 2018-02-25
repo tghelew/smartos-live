@@ -1,0 +1,10 @@
+#!/bin/sh
+# Launch a tmux session or create a new one if it doesn't exist
+if [ "x$TMUX" = "x" -a "x$SSH_TTY" != "x" ]; then
+    me=$(who am i | cut -d ' ' -f1 | tr -dc '[[:print]]')
+    if tmux has-session -t $me 2>/dev/null; then
+        exec tmux -2u attach-session -t $me
+    else
+        exec tmux -2u new-session -s $me
+    fi
+fi
